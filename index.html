@@ -18,15 +18,26 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <script>
+      window.addEventListener('load', () => {
+        const navbarToggle = document.querySelector('.navbar-toggler');
+        const toggleAnimation = document.querySelector('.animated-toggler');
+
+        navbarToggle.addEventListener('click', function () {
+          toggleAnimation.classList.toggle('open');
+        });
+      });
+    </script>
     <title>Let's Go to Banyuwangi City</title>
   </head>
+
   <body>
     <!-- start Navbar -->
     <nav
-      class="navbar fixed-top navbar-expand-lg navbar-dark"
+      class="navbar fixed-top shadow-sm navbar-expand-lg navbar-dark"
       style="background-color: #1f2937"
     >
-      <div class="container-fluid">
+      <div class="container">
         <a class="navbar-brand fw-bold" style="font-size: 24px" href="#">
           <img
             src="./images/logo-banyuwangi.png"
@@ -38,16 +49,19 @@
         </a>
         <button
           class="navbar-toggler"
+          style="border: solid #1f2937; border-radius: 0"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
+          data-bs-target="#navbarToggler"
+          aria-controls="navbarToggler"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <div class="animated-toggler">
+            <span></span><span></span><span></span><span></span>
+          </div>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarToggler">
           <ul class="navbar-nav ms-auto" style="font-size: 18px">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -84,12 +98,29 @@
             <div class="container">
               <div class="row">
                 <div class="col-lg-7">
-                  <h1>Gaya Baru Berwisata di Banyuwangi</h1>
-                  <p class="py-3 font-size-18 d-none d-md-block">
+                  <h1 class="fw-semibold">Gaya Baru Berwisata di Banyuwangi</h1>
+                  <p class="py-3 d-none d-md-block">
                     "BANYUWANGI TOURISM APP" Trobosan Inovatif buat panduan kamu
                     pelisiran menikmati indahnya destinasi pariwisata
                     Banyuwangi, dengan fasilitas booking langsung dalam aplikasi
                   </p>
+                  <a href="#"
+                    ><button type="button" class="btn btn-primary btn-lg fs-6">
+                      Button
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-arrow-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        ></path>
+                      </svg></button
+                  ></a>
                 </div>
               </div>
             </div>
@@ -101,17 +132,29 @@
             ></div>
             <div class="container">
               <div class="row justify-content-lg-center">
-                <div class="col col-lg-7 text-center">
-                  <h1 class="">Banyuwangi Festival</h1>
-                  <p class="py-3 font-size-18 d-none d-md-block">
+                <div class="col-lg-7 text-center">
+                  <h1 class="fw-semibold">Banyuwangi Festival</h1>
+                  <p class="py-3 d-none d-md-block">
                     Kini Banyuwangi Festival 2022 adalah trend berwisata ke
                     Banyuwangi di era pandemi. Dengan colorful hybrid concept
                     penggabungan event/atraksi secara offline dengan virtual.
                   </p>
-                  <a
-                    href="https://banyuwangitourism.com/festival"
-                    class="theme-btn border-0 mt-3"
-                    >Lihat Festival <i class="la la-arrow-right ml-1"></i
+                  <a href="#"
+                    ><button type="button" class="btn btn-primary btn-lg fs-6">
+                      Button
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-arrow-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        ></path>
+                      </svg></button
                   ></a>
                 </div>
               </div>
@@ -123,18 +166,30 @@
               style="background-image: url('./images/kuliner-banyuwangi.jpg')"
             ></div>
             <div class="container">
-              <div class="row">
-                <div class="col-lg-7">
-                  <h1>Pantai Pulau Merah</h1>
-                  <p class="py-3 font-size-18 d-none d-md-block">
+              <div class="row justify-content-lg-end">
+                <div class="col-lg-7 text-end">
+                  <h1 class="fw-semibold">Pantai Pulau Merah</h1>
+                  <p class="py-3 d-none d-md-block">
                     Salah satu destinasi populer yang ada dibanyuwangi. Dengan
                     view Pantai berwana merah menjelang sunset Membuat wisatawan
                     merasa tenang dan nyaman berada di banyuwangi
                   </p>
-                  <a
-                    href="https://banyuwangitourism.com/destination"
-                    class="theme-btn border-0 mt-3"
-                    >Explore Destination <i class="la la-arrow-right ml-1"></i
+                  <a href="#"
+                    ><button type="button" class="btn btn-primary btn-lg fs-6">
+                      Button
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-arrow-right"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        ></path>
+                      </svg></button
                   ></a>
                 </div>
               </div>
@@ -154,7 +209,7 @@
               >
                 <img
                   src="./images/kawah-ijen.jpg"
-                  class="img-thumbnail"
+                  class="img-thumbnail rounded-circle"
                   alt="image banner"
                   style="
                     border-radius: 15px;
@@ -172,7 +227,7 @@
               >
                 <img
                   src="./images/kebo-keboan-big.jpg"
-                  class="img-thumbnail"
+                  class="img-thumbnail rounded-circle"
                   alt="image banner"
                   style="
                     border-radius: 15px;
@@ -190,7 +245,7 @@
               >
                 <img
                   src="./images/kuliner-banyuwangi.jpg"
-                  class="img-thumbnail"
+                  class="img-thumbnail rounded-circle"
                   alt="image banner"
                   style="
                     border-radius: 15px;
@@ -207,5 +262,224 @@
       <!-- end carousel background -->
     </section>
     <!-- end hero -->
+    <!-- start destination -->
+    <section class="destination-wrapper">
+      <div class="container">
+        <!-- start destination header -->
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <div class="text-start">
+              <h2>TOP Destinations</h2>
+              <p>Berikut ini daftar wisata yang sering dikunjungi wisatawan.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="text-end">
+              <a href="#"
+                ><button type="button" class="btn btn-primary btn-lg fs-6">
+                  Explore All
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-arrow-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    ></path>
+                  </svg></button
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- end destination header -->
+
+        <div class="row pt-5">
+          <div class="col-lg-3 responsive-column">
+            <div class="flip-box">
+              <div class="flip-box-front">
+                <img
+                  src="https://banyuwangitourism.com/upload/destination/619ef0ba5fcdc.jpg"
+                  alt=""
+                  class="flip-img"
+                />
+                <a
+                  href="https://banyuwangitourism.com/destination/kawah-ijen"
+                  class="flip-content d-flex align-items-end justify-content-center"
+                >
+                  <h3>Kawah Ijen</h3>
+                </a>
+              </div>
+              <div class="flip-box-back">
+                <img
+                  src="https://banyuwangitourism.com/upload/destination/619ef0ba5fcdc.jpg"
+                  alt=""
+                  class="flip-img"
+                />
+                <a
+                  href="https://banyuwangitourism.com/destination/kawah-ijen"
+                  class="flip-content d-flex align-items-center justify-content-center"
+                >
+                  <div class="container text-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      class="bi bi-arrow-right-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+                      />
+                    </svg>
+                    <h3 class="flip-title">Explore Activity</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 responsive-column">
+            <div class="flip-box">
+              <div class="flip-box-front">
+                <img
+                  src="https://banyuwangitourism.com/upload/destination/619eeeb805a5f.jpg"
+                  alt=""
+                  class="flip-img"
+                />
+                <a
+                  href="https://banyuwangitourism.com/destination/de-djawatan"
+                  class="flip-content d-flex align-items-end justify-content-center"
+                >
+                  <h3>De Djawatan</h3>
+                </a>
+              </div>
+              <div class="flip-box-back">
+                <img
+                  src="https://banyuwangitourism.com/upload/destination/619eeeb805a5f.jpg"
+                  alt=""
+                  class="flip-img"
+                />
+                <a
+                  href="https://banyuwangitourism.com/destination/de-djawatan"
+                  class="flip-content d-flex align-items-center justify-content-center"
+                >
+                  <div class="container text-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      class="bi bi-arrow-right-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+                      />
+                    </svg>
+                    <h3 class="flip-title">Explore Activity</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 responsive-column">
+            <div class="flip-box">
+              <div class="flip-box-front">
+                <img
+                  src="https://banyuwangitourism.com/upload/destination/619ef1961ec23.jpg"
+                  alt=""
+                  class="flip-img"
+                />
+                <a
+                  href="https://banyuwangitourism.com/destination/pantai-cacalan"
+                  class="flip-content d-flex align-items-end justify-content-center"
+                >
+                  <h3>Pantai Cacalan</h3>
+                </a>
+              </div>
+              <div class="flip-box-back">
+                <img
+                  src="https://banyuwangitourism.com/upload/destination/619ef1961ec23.jpg"
+                  alt=""
+                  class="flip-img"
+                />
+                <a
+                  href="https://banyuwangitourism.com/destination/pantai-cacalan"
+                  class="flip-content d-flex align-items-center justify-content-center"
+                >
+                  <div class="container text-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      class="bi bi-arrow-right-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+                      />
+                    </svg>
+                    <h3 class="flip-title">Explore Activity</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 responsive-column">
+            <div class="flip-box">
+              <div class="flip-box-front">
+                <img
+                  src="https://banyuwangitourism.com/upload/destination/619ef3a0669e7.jpg"
+                  alt=""
+                  class="flip-img"
+                />
+                <a
+                  href="https://banyuwangitourism.com/destination/grand-watudodol"
+                  class="flip-content d-flex align-items-end justify-content-center"
+                >
+                  <h3 class="flip-title">Grand Watudodol</h3>
+                </a>
+              </div>
+              <div class="flip-box-back">
+                <img
+                  src="https://banyuwangitourism.com/upload/destination/619ef3a0669e7.jpg"
+                  alt=""
+                  class="flip-img"
+                />
+                <a
+                  href="https://banyuwangitourism.com/destination/grand-watudodol"
+                  class="flip-content d-flex align-items-center justify-content-center"
+                >
+                  <div class="container text-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="currentColor"
+                      class="bi bi-arrow-right-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"
+                      />
+                    </svg>
+                    <h3 class="flip-title">Explore Activity</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
