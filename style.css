@@ -150,7 +150,33 @@ body {
 
 /* Destination Section */
 .destination-wrapper {
-  padding: 100px 0;
+  background-color: #e5e7eb;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1030px) {
+  .responsive-column {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .responsive-column {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .responsive-column {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .flip-box-back:after,
+  .flip-box-front:after {
+    left: 65px;
+  }
 }
 
 .flip-box {
@@ -168,9 +194,9 @@ body {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  width: 100%;
-  /* nb */
-  height: 250px;
+  width: 261px;
+  height: 261px;
+  filter: brightness(70%);
 }
 .flip-box .flip-content {
   position: absolute;
@@ -235,25 +261,7 @@ body {
   backface-visibility: hidden;
   position: relative;
 }
-.flip-box-back:after,
-.flip-box-front:after {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  opacity: 0.7;
-  background: linear-gradient(
-    0deg,
-    rgba(13, 35, 62, 1) 0%,
-    rgba(13, 35, 62, 1) 5%,
-    rgba(13, 35, 62, 0) 100%
-  );
-}
+
 .flip-box-front {
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
@@ -272,4 +280,58 @@ body {
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+}
+
+/* Quote Section */
+.cta-area {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-image: url('./images/kawah-ijen.jpg');
+  background-attachment: fixed;
+  padding: 100px 0;
+}
+.cta-area::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1f2937;
+  opacity: 0.6;
+}
+
+.quote-backdrop {
+  font-style: italic;
+  background-color: rgba(255, 255, 255, 0.02);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  color: #f9faf8;
+}
+
+/* Source Section */
+
+.client-logo-item {
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 20px 20px;
+}
+.client-logo-item img {
+  width: 150px;
+  height: 100px;
+  filter: grayscale(100%);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.client-logo-item:hover img {
+  filter: grayscale(0);
 }
