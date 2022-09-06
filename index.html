@@ -18,6 +18,9 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <!-- own carousel css -->
+    <link href="own-carousel.min.css" rel="stylesheet" />
+    <script src="own-carousel.min.js"></script>
 
     <!-- Hamburger animation script -->
     <script>
@@ -28,6 +31,25 @@
         navbarToggle.addEventListener('click', function () {
           toggleAnimation.classList.toggle('open');
         });
+      });
+    </script>
+
+    <!-- own carousel script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('.own-carousel__container').ownCarousel({
+          itemPerRow: 5,
+          itemWidth: 19,
+          loop: true,
+          autoplay: 8000,
+          responsive: {
+            1000: [4, 24],
+            800: [3, 33],
+            600: [2, 49],
+            450: [1, 100],
+          },
+        });
+        responsive();
       });
     </script>
 
@@ -272,7 +294,7 @@
         <div class="row align-items-center">
           <div class="col-lg-8">
             <div class="text-start">
-              <h2>TOP Destinations</h2>
+              <h2 class="fw-semibold">TOP Destinations</h2>
               <p>Berikut ini daftar wisata yang sering dikunjungi wisatawan.</p>
             </div>
           </div>
@@ -600,39 +622,32 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="container">
-        <div class="row py-5 text-center">
-          <h2>Thanks To</h2>
-          <div class="col">
-            <div class="col client-logo-item">
-              <img src="./images/html-logo.svg" class="img-fluid" alt="" />
+    <!-- start Logo Carousel -->
+    <section class="py-5">
+      <h2 class="text-center fw-semibold">Thanks To</h2>
+      <div class="own-carousel__container py-3">
+        <div class="own-carousel__outer">
+          <div class="own-carousel">
+            <div class="own-carousel__item client-logo-item">
+              <img src="./images/html-logo.svg" alt="brand-image" />
             </div>
-            <div class="col client-logo-item">
-              <img src="./images/css3-logo.svg" class="img-fluid" alt="" />
+            <div class="own-carousel__item client-logo-item">
+              <img src="./images/css3-logo.svg" alt="brand-image" />
             </div>
-            <div class="col client-logo-item">
-              <img
-                src="./images/javascript-logo.svg"
-                class="img-fluid"
-                alt=""
-              />
+            <div class="own-carousel__item client-logo-item">
+              <img src="./images/javascript-logo.svg" alt="brand-image" />
             </div>
-            <div class="col client-logo-item">
-              <img src="./images/github-logo.svg" class="img-fluid" alt="" />
+            <div class="own-carousel__item client-logo-item">
+              <img src="./images/bootstrap-logo.svg" alt="brand-image" />
             </div>
-            <div class="col client-logo-item">
-              <img src="./images/bootstrap-logo.svg" class="img-fluid" alt="" />
+            <div class="own-carousel__item client-logo-item">
+              <img src="./images/github-logo.svg" alt="brand-image" />
             </div>
-            <div class="col client-logo-item">
-              <img
-                src="./images/odinproject-logo.png"
-                class="img-fluid"
-                alt=""
-              />
+            <div class="own-carousel__item client-logo-item">
+              <img src="./images/majestic-logo.png" alt="brand-image" />
             </div>
-            <div class="col client-logo-item">
-              <img src="./images/majestic-logo.png" class="img-fluid" alt="" />
+            <div class="own-carousel__item client-logo-item">
+              <img src="./images/odinproject-logo.png" alt="brand-image" />
             </div>
           </div>
         </div>
