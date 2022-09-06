@@ -2,7 +2,7 @@
 
 body {
   background-color: #f9faf8;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif !important;
 }
 
 /* Hamburger Icon */
